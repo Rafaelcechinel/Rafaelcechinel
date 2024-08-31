@@ -1,0 +1,127 @@
+<!DOCTYPE html>  
+<html lang="pt-br">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="Chat Comercial" content="Chat Comercial">  
+    <title>Chat Comercial</title>  
+    <style>  
+      
+    body {  
+        font-family: Arial, sans-serif;  
+        background-color: #000000;  
+        margin: 0;  
+        padding: 0px;  
+    }  
+
+    header {  
+        background-color: #525252;
+     font-family: Arial, Helvetica, sans-serif;
+     text-align: center;  
+     margin:0px; 
+    }  
+
+    h1 {  
+        color: #000000;  
+    }  
+
+    h3 {  
+        margin: 5px 0;  
+    }  
+
+    .voce {  
+        color: rgb(2, 134, 19); 
+        float: right
+    }  
+
+    .Atendentea {  
+        color: rgb(201, 201, 201);
+    }  
+
+    .mensagens{  
+        background-color: rgb(2, 134, 19);  
+        border-radius: 10px;  
+        padding: 10px;  
+        margin: 5px 0;  
+        max-width: 70%; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);  
+    }  
+    .mensagens11 {
+        background-color: rgb(255, 255, 255);  
+        border-radius: 10px;  
+        padding: 10px;  
+        margin: 5px 0;  
+        max-width: 70%; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);  }
+    .mensagens {  
+       flex: end
+       ; float: right 
+    }  
+
+    .mensagens11 {  
+        flex: start
+    
+        ; 
+    }  
+
+    .Digitavel {  
+        width: calc(100% - 100px); 
+        padding: 10px;  
+        border-radius: 5px;  
+        border: 1px solid #ccc;  
+        margin-right: 10px;  
+    }  
+
+    .botao {  
+        padding: 10px 20px;  
+        border-radius: 5px;  
+        border: none;  
+        background-color: rgb(2, 134, 19);  
+        color: white;  
+        cursor: pointer;  
+        transition: background-color 0.3s;  
+    }  
+
+    .botao:hover {  
+        background-color: rgb(2, 134, 19); /* Cor do botão ao passar o mouse */  
+    }  
+
+    form {  
+        display: flex; /* Alinhamento horizontal para área de texto e botão */  
+        margin-top: 20px;  
+    }  
+</style>
+    </style>  
+</head>  
+<body>  
+    <header>
+        <img src="" alt="">
+        <h1>Agendamento Cechinel Auto Parts</h1></header>  
+
+    <h3 class="voce">Você:</h3>  <div>
+    </div><br>
+    <p class="mensagens">Olá, boa tarde!</p>  
+    <div></div><br>
+<br>    
+    <h3 class="Atendentea">Atendente:</h3>  
+    <p class="mensagens11">Olá, boa tarde! Em que posso ajudá-lo?</p>  
+    <br>
+    <div></div>
+    <h3 class="voce">Você:</h3>  <br>
+    <p class="mensagens">Quero agendar uma revisão em meu carro.</p>  
+    <br><br>
+    <div></div>
+    <h3 class="Atendentea">Atendente:</h3>  
+    <p class="mensagens11">Ótimo! Marcado para amanhã às 13:30.</p>  
+<div><br>
+</div>
+    <h3 class="voce">Você:</h3>  <br>
+    <p class="mensagens">Ok, muito obrigado.</p>  
+<br><br>
+
+<div></div>
+    <form>  
+        <textarea class="Digitavel" rows="1" placeholder="Digite sua mensagem..."></textarea>  
+        <button class="botao">Enviar</button>  
+    </form>  
+</body>  
+</html>
