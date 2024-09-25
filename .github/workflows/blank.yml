@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>  
 <html lang="pt-br">  
 <head>  
@@ -15,7 +16,7 @@
 
     header {  
         background-color: #525252;
-     font-family: Arial, Helvetica, sans-serif;
+     font-family: unset;
      text-align: center;  
      margin:0px; 
     }  
@@ -30,19 +31,18 @@
 
     .voce {  
         color: rgb(2, 134, 19); 
-        float: right
+        
     }  
 
     .Atendentea {  
-        color: rgb(201, 201, 201);
-    }  
+        color: rgb(201, 201, 201); }
 
     .mensagens{  
         background-color: rgb(2, 134, 19);  
         border-radius: 10px;  
         padding: 10px;  
-        margin: 5px 0;  
-        max-width: 70%; 
+        margin: 5px 0px;  
+        max-width: 60%; 
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);  
     }  
     .mensagens11 {
@@ -50,25 +50,16 @@
         border-radius: 10px;  
         padding: 10px;  
         margin: 5px 0;  
-        max-width: 70%; 
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);  }
-    .mensagens {  
-       flex: end
-       ; float: right 
-    }  
-
-    .mensagens11 {  
-        flex: start
+        max-width: 285px; 
+        box-shadow: 0 0px 0px rgba(219, 0, 0, 0.2);  }
     
-        ; 
-    }  
 
     .Digitavel {  
-        width: calc(100% - 100px); 
+        width: calc(100% - 100px);  
         padding: 10px;  
         border-radius: 5px;  
         border: 1px solid #ccc;  
-        margin-right: 10px;  
+        margin-right: 5px;  
     }  
 
     .botao {  
@@ -82,46 +73,84 @@
     }  
 
     .botao:hover {  
-        background-color: rgb(2, 134, 19); /* Cor do botão ao passar o mouse */  
+        background-color: rgb(2, 134, 19);   
     }  
 
     form {  
-        display: flex; /* Alinhamento horizontal para área de texto e botão */  
+        display: flex; 
         margin-top: 20px;  
     }  
+    .mensagem{
+display:flex;
+flex-direction: column;
+align-items: flex-end;
+
+
+    }
 </style>
     </style>  
 </head>  
 <body>  
     <header>
         <img src="" alt="">
-        <h1>Agendamento Cechinel Auto Parts</h1></header>  
+        <h1>Agendamento <div></div>Cechinel Auto Parts</h1>
+    </header>  
 
-    <h3 class="voce">Você:</h3>  <div>
-    </div><br>
-    <p class="mensagens">Olá, boa tarde!</p>  
-    <div></div><br>
-<br>    
-    <h3 class="Atendentea">Atendente:</h3>  
-    <p class="mensagens11">Olá, boa tarde! Em que posso ajudá-lo?</p>  
-    <br>
-    <div></div>
-    <h3 class="voce">Você:</h3>  <br>
-    <p class="mensagens">Quero agendar uma revisão em meu carro.</p>  
-    <br><br>
-    <div></div>
-    <h3 class="Atendentea">Atendente:</h3>  
-    <p class="mensagens11">Ótimo! Marcado para amanhã às 13:30.</p>  
-<div><br>
-</div>
-    <h3 class="voce">Você:</h3>  <br>
-    <p class="mensagens">Ok, muito obrigado.</p>  
-<br><br>
+    <div class="lista">
+        <div class="mensagem">
+            <h3 class="voce">Você:</h3>
+            <p class="mensagens">Olá, boa tarde!</p>  
+        </div>
+        
+        <div>
+            <h3 class="Atendentea">Atendente:</h3>  
+            <p class="mensagens11">Olá, boa tarde! Em que posso ajudá-lo?</p>
+        </div>  
+        
+        <div class="mensagem">>
+            <h3 class="voce">Você:</h3>
+            <p class="mensagens">Quero agendar uma revisão em meu carro.</p>
+        </div> 
+    
+        <div>
+            <h3 class="Atendentea">Atendente:</h3>  
+            <p class="mensagens11">Ótimo! Marcado para amanhã às 13:30.</p> 
+        </div> 
+    
+        <div class="mensagem">
+            <h3 class="voce">Você:</h3>  
+            <p class="mensagens">Ok, muito obrigado.</p>  
+        </div>
+    </div>
 
-<div></div>
-    <form>  
+    <form id="formItem">  
         <textarea class="Digitavel" rows="1" placeholder="Digite sua mensagem..."></textarea>  
         <button class="botao">Enviar</button>  
     </form>  
+
+    <script>
+      const Digitavel = document.querySelector(".Digitavel");
+      const formItem = document.querySelector("#formItem");
+     
+      function adicionaItem() {
+        const Mensagem = Digitavel.value;
+        
+        // <div class="mensagem"></div>
+        const div = document.createElement("div");
+        div.classList.add("mensagem");
+        div.innerHTML = `<h3 class="voce">Você:</h3>  
+            <p class="mensagens">${Mensagem}</p>`;
+
+        const lista = document.querySelector(".lista");
+        lista.appendChild(div);
+
+        Digitavel.value = "";
+      }
+
+      formItem.addEventListener("submit", function (event) {
+        event.preventDefault();
+        adicionaItem();
+      });
+    </script>
 </body>  
 </html>
